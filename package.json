@@ -1,0 +1,24 @@
+{
+  "name": "monorepo-micro-frontend-sample",
+  "version": "1.0.0",
+  "license": "",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "start": "concurrently \"wsrun --parallel start\"",
+    "start:live": "concurrently \"wsrun --parallel start:live\"",
+    "build:all": "concurrently \"wsrun --parallel build\"",
+    "serve:all": "concurrently \"wsrun --parallel serve -s\"",
+    "build:serve:all": "yarn run build:all && yarn run serve:all"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "lerna": "^3.22.1",
+    "rimraf": "^3.0.2",
+    "wsrun": "^5.2.4"
+  }
+}
